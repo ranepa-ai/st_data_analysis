@@ -100,39 +100,3 @@ def page_data(df):
         ax.set_xlabel('Зарплата')
         ax.set_ylabel('Частота')
         st.pyplot(fig)
-
-
-    def create_question_block(question, correct_answer, wrong_answers):
-        st.subheader(question)
-        
-        # Создание радиокнопок для ответов
-        options = [correct_answer] + wrong_answers
-        user_answer = st.radio("Выберите правильный ответ:", options, index=None)
-        
-        # Проверка ответа и вывод результата
-        if user_answer is not None:
-            if user_answer == correct_answer:
-                st.success("Верно!")
-            else:
-                st.error("Неверно. Правильный ответ: {}".format(correct_answer))
-
-    # Главный блок приложения
-    st.title("Вопросы по теории")
-
-    # Первый вопрос
-    question1 = "Что такое среднее арифметическое?"
-    correct_answer1 = "Сумма всех значений делённая на их количество"
-    wrong_answers1 = ["Медиана", "Мода", "Дисперсия"]
-    create_question_block(question1, correct_answer1, wrong_answers1)
-
-    # Второй вопрос
-    question2 = "Как вычислить стандартное отклонение?"
-    correct_answer2 = "Корень из дисперсии"
-    wrong_answers2 = ["Медиана", "Мода", "Среднее арифметическое"]
-    create_question_block(question2, correct_answer2, wrong_answers2)
-
-    # Третий вопрос
-    question3 = "Что такое вероятность в статистике?"
-    correct_answer3 = "Отношение числа благоприятных случаев к общему числу случаев"
-    wrong_answers3 = ["Среднее арифметическое", "Стандартное отклонение", "Дисперсия"]
-    create_question_block(question3, correct_answer3, wrong_answers3)

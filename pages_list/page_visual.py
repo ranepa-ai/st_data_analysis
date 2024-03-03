@@ -96,37 +96,3 @@ def page_visual(df):
         ax.set_xlabel('Тип занятости')
         ax.set_ylabel('Зарплата')
         st.pyplot(fig)
-
-    def create_question_block(question, correct_answer, wrong_answers):
-        st.subheader(question)
-        
-        # Создание радиокнопок для ответов
-        options = [correct_answer] + wrong_answers
-        user_answer = st.radio("Выберите правильный ответ:", options, index=None)
-        
-        # Проверка ответа и вывод результата
-        if user_answer is not None:
-            if user_answer == correct_answer:
-                st.success("Верно!")
-            else:
-                st.error("Неверно. Правильный ответ: {}".format(correct_answer))
-
-    # Главный блок приложения
-    st.title("Вопросы по теории")
-
-    question4 = "Что из нижеперечисленного не является типом графика визуализации данных?"
-    correct_answer4 = "Контурная карта"
-    wrong_answers4 = ["Скрипичная диаграмма", "График рассеяния", "Тепловая карта"]
-    create_question_block(question4, correct_answer4, wrong_answers4)
-
-    # Пятый вопрос
-    question5 = "Какой тип графика лучше всего подходит для отображения тренда во времени?"
-    correct_answer5 = "Линейный график"
-    wrong_answers5 = ["Гистограмма", "Круговая диаграмма", "Ящик с усами (Box plot)"]
-    create_question_block(question5, correct_answer5, wrong_answers5)
-
-    # Шестой вопрос
-    question6 = "Что из перечисленного используется для выявления выбросов в данных?"
-    correct_answer6 = "Ящик с усами (Box plot)"
-    wrong_answers6 = ["Круговая диаграмма", "Гистограмма", "Линейный график"]
-    create_question_block(question6, correct_answer6, wrong_answers6)
